@@ -18,13 +18,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: add password file for Postgres
+          name: migrate DB schema
           command: |
             cp .pgpass ${HOME}/.pgpass
             chmod 0600 ${HOME}/.pgpass
-      - run:
-          name: migrate DB schema
-          command: |
             psql -U postgres -d exploration -h localhost -p 5432 -f schema.sql
 
 workflows:
