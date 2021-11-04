@@ -11,7 +11,7 @@ jobs:
       - image: jbergknoff/postgresql-client
       - image: << parameters.image >>
         environment:
-          POSTGRES_USER: admin
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: Super5ecret
           POSTGRES_DB: exploration
 
@@ -25,7 +25,7 @@ jobs:
       - run:
           name: migrate DB schema
           command: |
-            psql -U admin -d exploration -h localhost -p 5432 -f schema.sql
+            psql -U postgres -d exploration -h localhost -p 5432 -f schema.sql
 
 workflows:
   main:
