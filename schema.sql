@@ -1,3 +1,5 @@
+CREATE EXTENSION citext;
+
 CREATE TABLE users (
 	id SERIAL PRIMARY KEY,
 	email CITEXT NOT NULL UNIQUE, -- citext is an extension
