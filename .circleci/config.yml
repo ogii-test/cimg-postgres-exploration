@@ -12,15 +12,16 @@ jobs:
       - image: << parameters.image >>
         environment:
           POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: Super5ecret
           POSTGRES_DB: exploration
 
     steps:
       - checkout
-      # - run:
-      #     name: add password file for Postgres
-      #     command: |
-      #       cp .pgpass ${HOME}/.pgpass
-      #       chmod 0600 ${HOME}/.pgpass
+      - run:
+          name: add password file for Postgres
+          command: |
+            cp .pgpass ${HOME}/.pgpass
+            chmod 0600 ${HOME}/.pgpass
       - run:
           name: migrate DB schema
           command: |
