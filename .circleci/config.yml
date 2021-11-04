@@ -22,6 +22,7 @@ jobs:
           command: |
             cp .pgpass ${HOME}/.pgpass
             chmod 0600 ${HOME}/.pgpass
+            sleep 5s
             psql -U postgres -d exploration -h localhost -p 5432 -f schema.sql
 
 workflows:
