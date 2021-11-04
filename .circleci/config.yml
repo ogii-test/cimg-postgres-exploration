@@ -31,7 +31,7 @@ workflows:
     jobs:
       - extension:
           name: cimg-postgres
-          image: 'cimg/postgres:9.6'
+          image: 'cimg/postgres:14.0'
       - extension:
           name: official-postgres
-          image: 'postgres:9.6'
+          image: 'circleci/postgres:14.0'
