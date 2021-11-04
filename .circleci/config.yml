@@ -34,4 +34,4 @@ workflows:
           image: 'cimg/postgres:14.0'
       - extension:
           name: official-postgres
-          image: 'circleci/postgres:14.0'
+          image: 'postgres:14.0'
