@@ -25,7 +25,7 @@ jobs:
       - run:
           name: migrate DB schema
           command: |
-            psql -U admin -d exploration -h 127.0.0.1 -p 5432 -f schema.sql
+            psql -U admin -d exploration -h localhost -p 5432 -f schema.sql
 
 workflows:
   main:
